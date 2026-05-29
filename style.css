@@ -1,0 +1,317 @@
+* {
+  cursor: url('https://i.ibb.co/hxcf2fnD/Pngtree-purple-crescent-moon-isolated-on-21333657.png'),auto;
+}
+
+body {
+background:black url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm96ZDlsOGJraWJjMnhhcmtlY2U5M2lsN2xvMmllNzZjY2ZvczM1aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2NYZU0jBljelR5FkCz/giphy.gif) no-repeat fixed;
+background-size:cover;
+font-family:'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+}
+
+/* Force uniform font across every element so no browser defaults slip in */
+*, *::before, *::after {
+font-family:'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+}
+
+/* MAIN DISPLAY COLORS */
+#mugshot {
+filter:drop-shadow(4px 4px 10px #3b3736);
+-webkit-filter:drop-shadow(4px 4px 10px #3b3736);
+}
+.color, #navbar a, .g-image {
+background-color:#BCB1E1;
+box-shadow:4px 4px 10px #3b3736;
+color:Black;
+}
+#navbar a {
+background-color:#BCB1E1;
+border:2px solid #3C3161;
+text-shadow:0 0 5px #fff;
+}
+#navbar a, h2::before, h2::after {
+background-image:url('https://i.ibb.co/1YCDB4f0/Celestial-Hoard-logo-Bigger.png');
+background-position:center;
+background-size:cover;
+}
+a {
+text-decoration:none;
+color:#fff;
+}
+a:hover {
+color:#3C3161;
+}
+
+/* GOOGLE CHROME SROLLBARS */
+::-webkit-scrollbar {
+width:8px;
+height:8px;
+background-color:#3C3161;
+}
+::-webkit-scrollbar-thumb {
+background-color:#B9B1E0;
+}
+
+/* TRANSITION SPEED */
+#navbar a, .tab, #leftcol, #rightcol {
+transition:1s;
+-o-transition:1s;
+-moz-transition:1s;
+-webkit-transition:1s;
+}
+
+/* CENTERING */
+#mugshot, #musicbox, .g-image {
+left:50%;
+transform:translateX(-50%);
+-o-transform:translateX(-50%);
+-moz-transform:translateX(-50%);
+-webkit-transform:translateX(-50%);
+}
+
+/* CSS MEAT */
+#mugshot {
+z-index:1;
+position:fixed;
+top:0;
+height:100%;
+}
+#navbar {
+z-index:4;
+position:fixed;
+top:5%;
+left:35%;
+height:90%;
+width:30%;
+min-width:100px;
+}
+#navbar a {
+position:absolute;
+height:22px;
+width:16px;
+padding:7px 10px;
+line-height:22px;
+border-radius:100%;
+opacity:0.8;
+}
+#navbar a:hover {
+opacity:0.95;
+}
+#musicbox {
+z-index:5;
+position:fixed;
+bottom:0;
+max-height:54px;
+border-radius:50px;
+}
+
+/* TAB VISIBILITY SYSTEM - UPDATED */
+.tab {
+z-index:2;
+position:fixed;
+top:0;
+left:0;
+height:100%;
+width:100%;
+opacity:0;
+visibility: hidden;      /* Keeps the images completely hidden until active */
+pointer-events: none;    /* Stops invisible tabs from blocking clicks */
+}
+.tab:target {
+z-index:3;
+opacity:1;
+visibility: visible;     /* Reveals the targeted tab */
+pointer-events: auto;    /* Allows text and images to be clicked */
+}
+
+#leftcol, #rightcol {
+position:absolute;
+height:100%;
+width:31%;
+}
+#leftcol {
+bottom:-75%;
+left:3.5%;
+}
+#rightcol {
+top:-75%;
+right:3.5%;
+}
+.tab:target #leftcol {
+bottom:0;
+}
+.tab:target #rightcol {
+top:0;
+}
+.box, .g-image {
+position:absolute;
+border-radius:20px;
+overflow:hidden;
+}
+.box {
+left:0;
+right:0;
+}
+.inner {
+position:absolute;
+top:4%;
+left:2.5%;
+height:92%;
+width:95%;
+overflow-y:auto;
+}
+.t {
+top:2.5%;
+}
+.b {
+bottom:2.5%;
+}
+#leftcol .small {
+right:10%;
+bottom:72.5%;
+}
+#leftcol .image {
+right:10%;
+top:30%;
+}
+#rightcol .small {
+left:10%;
+top:72.5%;
+}
+#rightcol .image {
+left:10%;
+bottom:30%;
+}
+.image img {
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+-o-transform:translateY(-50%);
+-moz-transform:translateY(-50%);
+-webkit-transform:translateY(-50%);
+}
+.g-image {
+position:absolute;
+height:46.25%;
+}
+.l {
+left:20%;
+}
+.r {
+left:80%;
+}
+.box img {
+width:100%;
+}
+h2 {
+position:relative;
+text-align:center;
+}
+h2::before, h2::after {
+content:"";
+position:absolute;
+top:5%;
+height:90%;
+width:24px;
+opacity:0.9;
+}
+h2::before {
+left:0;
+}
+h2::after {
+right:0;
+}
+h2:first-child {
+margin-top:1%;
+}
+p {
+text-indent:5%;
+}
+#credit {
+z-index:5;
+position:fixed;
+right:0;
+bottom:0;
+border-radius:50% 50% 0;
+}
+
+/* NEW CONTAINER LAYOUT FOR CAPTIONS - UPDATED */
+.img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Centers and scales the raw image inside the container */
+.img-container img {
+  max-width: 100%;
+  max-height: 80%; 
+  object-fit: contain;
+  position: relative; /* Keeps it inside the container flow */
+  top: unset;         /* Disables old absolute centering */
+  transform: unset;   /* Disables old absolute centering */
+}
+
+/* Style for your captions */
+.img-caption {
+  margin: 5px 0 0 0;
+  text-indent: 0 !important; /* Overrides your general p indent */
+  text-align: center;
+  font-size: 14px;
+  color: #000; 
+  width: 100%;
+}
+
+/* Override .image img absolute positioning for star+text panels */
+.image .inner img {
+  position: relative;
+  top: unset;
+  transform: unset;
+  -o-transform: unset;
+  -moz-transform: unset;
+  -webkit-transform: unset;
+}
+
+/* g-image panels are now INSIDE tabs, so they inherit tab visibility.
+   This resets them to fill their tab correctly. */
+.tab .g-image {
+  /* Already positioned by .t/.b/.l/.r — just ensure they hide with the tab */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollable text area inside g-image panels */
+.g-image-scroll {
+  overflow-y: auto;
+  max-height: 40%;
+  width: 100%;
+  padding: 4px 8px;
+  box-sizing: border-box;
+}
+
+/* Scrollbar styling for g-image panels */
+.g-image-scroll::-webkit-scrollbar {
+  width: 5px;
+  background-color: #3C3161;
+}
+.g-image-scroll::-webkit-scrollbar-thumb {
+  background-color: #B9B1E0;
+  border-radius: 4px;
+}
+
+/* img inside g-image should not overflow */
+.g-image img {
+  max-height: 55%;
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* The #close div just needs to exist as an anchor target.
+   Targeting it removes :target from all real tabs, hiding everything. */
+#close:target {
+  /* intentionally empty — just clears the active tab */
+}
